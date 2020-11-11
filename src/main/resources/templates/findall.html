@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Finder all recipes</title>
+</head>
+<body>
+
+<tr th:each="product : ${products}">
+    <td th:text="${product.id}"></td>
+    <td th:text="${product.productName}"></td>
+    <td th:text="${product.price}"></td>
+    <td th:text="${product.description}"></td>
+    <td th:text="${product.company.name}"></td>
+    <td th:text="${product.company.companyDescription.description}"></td>
+    <td><a th:href="@{/deleteproduct(id=${product.id})}"><button class="btn btn-del"> Delete </button></a></th>
+
+
+</tr>
+
+</body>
+</html>
